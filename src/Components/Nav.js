@@ -53,7 +53,7 @@ function Nav() {
               backgroundColor: "cornflowerblue",
             }}
             onClick={logout}
-            to="/home"
+            to="/crypto-watch"
           >
             <p>Logout</p>
           </Link>
@@ -77,7 +77,7 @@ function Nav() {
               <div><FiLogIn /><p>Login</p></div>
             </Link>
           ) : (
-            <Link className={classes.footerMenuItem} onClick={logout} to="/home">
+            <Link className={classes.footerMenuItem} onClick={logout} to="/crypto-watch">
               <div><FiLogOut /><p>Logout</p></div>
             </Link>
           )}
