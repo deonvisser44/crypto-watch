@@ -26,7 +26,8 @@
 }
 
 .emptyPortfolio{
-    margin-top: 10vh;
+    position: fixed;
+    top: 10%;
     margin-bottom: 0;
     font-size: 2rem;
     text-align: center;
@@ -190,9 +191,10 @@
     }
 
     .emptyPortfolio{
-        margin-top: 10vh;
+        position: fixed;
+        top: 9%;
         margin-bottom: 0;
-        font-size: 1.5rem;
+        font-size: 1rem;
         text-align: center;
     }
 }
@@ -242,7 +244,7 @@
         width: 90%;
         height: fit-content;
         margin: auto;
-        margin-top: 8vh;
+        margin-top: 10vh;
         row-gap: 0;
         display: grid;
         grid-template-columns: 100%;
@@ -261,9 +263,13 @@
         grid-template-columns: 25% 30% 30% 15%;
     }
 
-    /* .addForm button, select {
+    .emptyPortfolio{
+        position: fixed;
+        top: 6%;
+        margin-bottom: 0;
         font-size: 1rem;
-    } */
+        text-align: center;
+    }
 
     .right {
         grid-row: 1;

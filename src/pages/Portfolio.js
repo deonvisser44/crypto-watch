@@ -72,11 +72,11 @@ function Portfolio() {
 
   return (
     <div className={classes.wrapper}>
-        {portfolio && portfolio.length === 0 && (
-              <p className={classes.emptyPortfolio}>
-                Add cryptocurrencies to start tracking your portfolio
-              </p>
-            )}
+      {portfolio && portfolio.length === 0 && (
+        <p className={classes.emptyPortfolio}>
+          Add cryptocurrencies to start tracking your portfolio
+        </p>
+      )}
       <div
         className={
           isLoggedIn ? classes.portfolioLoggedIn : classes.portfolioLoggedOut
@@ -154,17 +154,18 @@ function Portfolio() {
                 </div>
               </div>
             </div>
-            <div className={classes.right}>
-              <h1>Total Value: {totalValueFormatted}</h1>
-              <div className={classes.breakDown}>
-                <h2>Portfolio Breakdown</h2>
-                {portfolio && (
-                  <div className={classes.chartWrapper}>
-                    <Doughnut data={chartData} options={chartOptions} />
-                  </div>
-                )}
+            {portfolio && portfolio.length > 0 && (
+              <div className={classes.right}>
+                <h1>Total Value: {totalValueFormatted}</h1>
+                <div className={classes.breakDown}>
+                  {portfolio && (
+                    <div className={classes.chartWrapper}>
+                      <Doughnut data={chartData} options={chartOptions} />
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </>
         )}
       </div>
