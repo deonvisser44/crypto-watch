@@ -24,7 +24,7 @@ function SignUp() {
       setError("");
       // setIsLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-      history.push("/home");
+      history.push("/crypto-watch");
     } catch {
       setError("Failed to create an account, try again");
     }
