@@ -6,8 +6,6 @@ import { ChartContext } from "../store/Chart-Context";
 function ChartModal() {
   const { tokenForChart, closeModal } = useContext(ChartContext);
 
-  let content;
-
   let layout = {
     layout: {
       backgroundColor: "#161A25",
@@ -16,7 +14,6 @@ function ChartModal() {
     grid: {
       vertLines: {
         color: "#454545",
-
       },
       horzLines: {
         color: "#454545",
@@ -33,16 +30,26 @@ function ChartModal() {
   };
 
 
+  let chartHeight;
+  let chartWidth;
+
+  if(window.screen.width > 820){
+    chartWidth = window.screen.width * 0.9;
+    chartHeight = window.screen.height * 0.7;
+  } else {
+    chartWidth = window.screen.width * 0.8;
+    chartHeight = window.screen.height * 0.6;
+  }
+
   return (
     <div className={classes.backdrop} onClick={(e) => closeModal()}>
       <div className={classes.parent} onClick={(e) => e.stopPropagation()}>
         <h3>{tokenForChart}/USDT - 1 min</h3>
         <TradeViewChart
-        interval="30m"
+          interval="30m"
           containerStyle={{
-            minHeight: "80vh",
-            minWidth: "80vw",
-            marginBottom: "30px",
+            minHeight: chartHeight,
+            minWidth: chartWidth,
           }}
           chartLayout={layout}
           pair={`${tokenForChart}USDT`}

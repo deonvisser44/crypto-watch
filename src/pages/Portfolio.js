@@ -85,6 +85,12 @@ function Portfolio() {
         )}
         {isLoggedIn && (
           <>
+            {!portfolio && (
+              <p className={classes.emptyPortfolio}>
+                Add cryptocurrencies to start tracking your portfolio
+              </p>
+            )}
+
             <div className={classes.left}>
               <form className={classes.addForm} onSubmit={addCoinHandler}>
                 {coinOptions && (
@@ -115,14 +121,16 @@ function Portfolio() {
                     <h3>Coin</h3>
                     <h3>Amount</h3>
                     <h3>Value</h3>
-                    <button
-                      className={classes.editButton}
-                      onClick={editStateHandler}
-                    >
-                      Edit
-                    </button>
+                    <div className={classes.buttonDiv}>
+                      <button
+                        className={classes.editButton}
+                        onClick={editStateHandler}
+                      >
+                        Edit
+                      </button>
+                    </div>
                   </div>
-                  {portfolio ? (
+                  {portfolio &&
                     portfolio.map((coin) => (
                       <div className={classes.coinRow}>
                         <p>{coin.token.toUpperCase()}</p>
@@ -143,14 +151,7 @@ function Portfolio() {
                           </div>
                         )}
                       </div>
-                    ))
-                  ) : (
-                    <div className={classes.emptyPortfolio}>
-                      <p>
-                        Add cryptocurrencies to start tracking your portfolio.
-                      </p>
-                    </div>
-                  )}
+                    ))}
                 </div>
               </div>
             </div>

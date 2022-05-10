@@ -20,7 +20,6 @@ function App() {
             <div style={{ backgroundColor: "#332e2d", minHeight: "100vh" }}>
               <Nav />
               <Switch>
-                <Route path="/" exact component={Market} />
                 <Route path="/home" component={Market} />
                 <Route path='/news' component={News} />
                 <Route path="/portfolio" component={Portfolio} />
