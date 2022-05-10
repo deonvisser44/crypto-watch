@@ -20,13 +20,14 @@
 
 .loadingSpinner {
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
   margin-top: 25vh;
   height: 150px;
   width: 150px;
 }
 
 .loadingSpinner img {
-  margin: 0 auto;
   height: 100px;
   width: 100px;
 }
@@ -38,13 +39,14 @@
 
   .loadingSpinner {
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
     margin-top: 25vh;
     height: 100px;
     width: 100px;
   }
 
   .loadingSpinner img {
-    margin: 0 auto;
     height: 80px;
     width: 80px;
   }
@@ -63,13 +65,14 @@
 
   .loadingSpinner {
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
     margin-top: 25vh;
     height: 80px;
     width: 80px;
   }
 
   .loadingSpinner img {
-    margin: 0 auto;
     height: 60px;
     width: 60px;
   }

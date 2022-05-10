@@ -72,7 +72,7 @@ function Portfolio() {
 
   return (
     <div className={classes.wrapper}>
-      {portfolio && portfolio.length === 0 && (
+      {isLoggedIn && portfolio && portfolio.length === 0 && (
         <p className={classes.emptyPortfolio}>
           Add cryptocurrencies to start tracking your portfolio
         </p>
