@@ -72,6 +72,11 @@ function Portfolio() {
 
   return (
     <div className={classes.wrapper}>
+        {portfolio && portfolio.length === 0 && (
+              <p className={classes.emptyPortfolio}>
+                Add cryptocurrencies to start tracking your portfolio
+              </p>
+            )}
       <div
         className={
           isLoggedIn ? classes.portfolioLoggedIn : classes.portfolioLoggedOut
@@ -85,12 +90,6 @@ function Portfolio() {
         )}
         {isLoggedIn && (
           <>
-            {!portfolio && (
-              <p className={classes.emptyPortfolio}>
-                Add cryptocurrencies to start tracking your portfolio
-              </p>
-            )}
-
             <div className={classes.left}>
               <form className={classes.addForm} onSubmit={addCoinHandler}>
                 {coinOptions && (

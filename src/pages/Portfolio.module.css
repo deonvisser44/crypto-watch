@@ -26,7 +26,9 @@
 }
 
 .emptyPortfolio{
-    margin-top: 3vh;
+    margin-top: 10vh;
+    margin-bottom: 0;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -185,6 +187,13 @@
         display: grid;
         grid-gap: 4%;
         grid-template-columns: 50% 45%;
+    }
+
+    .emptyPortfolio{
+        margin-top: 10vh;
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        text-align: center;
     }
 }
 
