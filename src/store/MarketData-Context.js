@@ -172,9 +172,11 @@ export function MarketDataProvider({ children }) {
       legend: {
         display: true,
         labels: {
+          boxWidth: 12,
+          boxHeight: 12,
           color: "white",
           font: {
-            size: 20,
+            size: 16,
             fontColor: "white",
           },
         },
