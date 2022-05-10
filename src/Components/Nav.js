@@ -20,7 +20,7 @@ function Nav() {
         <p className={classes["nav-1"]}>CoinWatch</p>
         <Link
           style={{ textDecoration: "none", backgroundColor: "cornflowerblue" }}
-          to="/home"
+          to="/crypto-watch"
         >
           <p>Market</p>
         </Link>
@@ -63,7 +63,7 @@ function Nav() {
         <p className={classes["nav-1"]}>CoinWatch</p>
 
         <div className={classes.footerMenu}>
-          <Link className={classes.footerMenuItem} to="/home">
+          <Link className={classes.footerMenuItem} to="/crypto-watch">
             <div><BiLineChart /><p>Market</p></div>
           </Link>
           <Link className={classes.footerMenuItem} to="/news">
