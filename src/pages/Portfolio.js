@@ -65,11 +65,12 @@ function Portfolio() {
               <form className={classes.addForm} onSubmit={addCoinHandler}>
                 {coinOptions && (
                   <select
-                    name=""
                     id="coinOptions"
+                    defaultValue=''
                     value={selected}
                     onChange={onChangeCoin}
                   >
+                    <option hidden value="">Currency</option>
                     {coinOptions.map((coin) => (
                       <option key={coin} value={coin}>
                         {coin.toUpperCase()}

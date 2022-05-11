@@ -1,299 +1,312 @@
 .wrapper {
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .portfolioLoggedIn {
-    border-radius: 8px;
-    width: 70%;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 14vh;
-    display: grid;
-    grid-gap: 5%;
-    grid-template-columns: 53% 45%;
+  border-radius: 8px;
+  width: 70%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 14vh;
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: 53% 45%;
 }
 
 .portfolioLoggedOut {
-    width: 70%;
-    height: 80vh;
-    margin: 0 auto;
-    margin-top: 10vh;
-    display: grid;
-    grid-template-columns: 100%;
+  width: 70%;
+  height: 80vh;
+  margin: 0 auto;
+  margin-top: 10vh;
+  display: grid;
+  grid-template-columns: 100%;
 }
 
-.emptyPortfolio{
-    position: fixed;
-    top: 10%;
-    margin-bottom: 0;
-    font-size: 2rem;
-    text-align: center;
+.emptyPortfolio {
+  position: fixed;
+  top: 10%;
+  margin-bottom: 0;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .loginText {
-    margin: auto;
-    text-align: center;
+  margin: auto;
+  text-align: center;
 }
 
 .loginText a {
-    color: cornflowerblue;
-    font-size: 1.5rem;
+  color: cornflowerblue;
+  font-size: 1.5rem;
 }
 
-.left{
-    grid-row: 1;
-    grid-column: 1;
-    height: fit-content;
+.left {
+  grid-row: 1;
+  grid-column: 1;
+  height: fit-content;
 }
 
 .addForm {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 25% 35% 20%;
-    justify-content: space-between;
-    height: fit-content;
-    margin-top: 3vh;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 25% 35% 20%;
+  justify-content: space-between;
+  height: fit-content;
+  margin-top: 3vh;
 }
 
 .addForm input {
-    padding-left: 5px;
-    font-size: 1.3rem;
-    border-radius: 5px;
-    border: 3px solid cornflowerblue;
-    background-color: #e4e4e4;
-    color: #000000;
-  }
-  
-  input:focus,
-  textarea:focus,
-  select:focus {
-    outline: none;
-  }
-  
-  .addForm input::placeholder {
-    color: #808080;
-  }
+  padding-left: 5px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  border: 3px solid cornflowerblue;
+  background-color: #e4e4e4;
+  color: #000000;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.addForm input::placeholder {
+  color: #808080;
+}
 
 .addForm button {
-    padding-left: 5px;
-    font-size: 1.3rem;
-    border-radius: 5px;
-    border: 3px solid cornflowerblue;
-    background-color: cornflowerblue;
-    color: white;
+  padding-left: 5px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  border: 3px solid cornflowerblue;
+  background-color: cornflowerblue;
+  color: white;
 }
 
 .addForm select {
-    padding-left: 5px;
-    font-size: 1.3rem;
-    border-radius: 5px;
-    border: 3px solid cornflowerblue;
-    background-color: cornflowerblue;
-    color: white;
+  padding-left: 5px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  border: 3px solid cornflowerblue;
+  background-color: cornflowerblue;
+  color: white;
 }
 
-.portfolioList{
-    margin-top: 15px;
-    width: 100%;
-    height: fit-content;
+.portfolioList {
+  margin-top: 15px;
+  width: 100%;
+  height: fit-content;
 }
-
 
 .labels {
-    display: grid;
-    padding-bottom: 2px;
-    grid-template-columns: 30% 30% 30% 10%;
-    border-bottom: 1px solid rgb(252, 252, 252);
+  display: grid;
+  padding-bottom: 2px;
+  grid-template-columns: 30% 30% 30% 10%;
+  border-bottom: 1px solid rgb(252, 252, 252);
 }
 
 .buttonDiv {
-    display: grid;
-    justify-items: center;
+  display: grid;
+  justify-items: center;
 }
 
 .labels button {
-    font-size: 1rem;
-    width: fit-content;
-    padding: 0 5px;
-    border: none;
+  font-size: 1rem;
+  width: fit-content;
+  padding: 0 5px;
+  border: none;
 }
 
 .editButton {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    background: white;
-    border-radius: 10px;
-    color: black !important;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: white;
+  border-radius: 10px;
+  color: black !important;
 }
 
 .deleteButton {
-    display: grid;
-    align-items: center;
-    justify-items: center;
+  display: grid;
+  align-items: center;
+  justify-items: center;
 }
 
 .coinRow {
-    display: grid;
-    grid-template-columns: 30% 30% 30% 10%;
-    border-bottom: 1px solid rgba(230, 230, 230, 0.5);
-    height: fit-content;
-    padding: 7px 0;
+  display: grid;
+  grid-template-columns: 30% 30% 30% 10%;
+  border-bottom: 1px solid rgba(230, 230, 230, 0.5);
+  height: fit-content;
+  padding: 7px 0;
 }
 
 .coinRow button {
-    font-size: 1rem;
-    width: fit-content;
-    padding: 0 8px;
+  font-size: 1rem;
+  width: fit-content;
+  padding: 0 8px;
 }
 
-.coinRow p{
-    font-size: 1.2rem;
+.coinRow p {
+  font-size: 1.2rem;
 }
 
 .right {
-    grid-row: 1;
-    grid-column: 2;
-    text-align: center;
-    border-radius: 0 8px 8px 0;
+  grid-row: 1;
+  grid-column: 2;
+  text-align: center;
+  border-radius: 0 8px 8px 0;
 }
 
 .chartWrapper {
-    margin: auto;
-    width: 380px;
-    height: 380px;
-    margin-top: 2vh;
-    padding-bottom: 2vh;
+  margin: auto;
+  width: 380px;
+  height: 380px;
+  margin-top: 2vh;
+  padding-bottom: 2vh;
 }
 
 .right h1 {
-    margin-top: 2vh;
-    margin-bottom: 1.5vh;
+  margin-top: 2vh;
+  margin-bottom: 1.5vh;
 }
 
 .breakDown {
-    height: fit-content;
-    margin-top: 2vh;
+  height: fit-content;
+  margin-top: 2vh;
 }
 
 @media only screen and (max-width: 1200px) {
-    .portfolioLoggedIn {
-        width: 85%;
-        height: auto;
-        margin: 0 auto;
-        margin-top: 12vh;
-        display: grid;
-        grid-gap: 4%;
-        grid-template-columns: 50% 45%;
-    }
+  .portfolioLoggedIn {
+    width: 85%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 12vh;
+    display: grid;
+    grid-gap: 4%;
+    grid-template-columns: 50% 45%;
+  }
 
-    .emptyPortfolio{
-        position: fixed;
-        top: 9%;
-        margin-bottom: 0;
-        font-size: 1rem;
-        text-align: center;
-    }
+  .emptyPortfolio {
+    position: fixed;
+    top: 9%;
+    margin-bottom: 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .addForm button {
+    font-size: 1rem;
+  }
+
+  .addForm select {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 820px) {
+  .wrapper {
+    padding-bottom: 10vh;
+    height: 100vh;
+    overflow: scroll;
+  }
+  .portfolioLoggedIn {
+    width: 85%;
+    height: fit-content;
+    margin: auto;
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: 100%;
+  }
 
-    .wrapper {
-        padding-bottom: 10vh;
-        height: 100vh;
-        overflow: scroll;
-    }
-    .portfolioLoggedIn {
-        width: 85%;
-        height: fit-content;
-        margin: auto;
-        margin-top: 10vh;
-        display: grid;
-        grid-template-columns: 100%;
-    }
+  .right {
+    grid-row: 1;
+    grid-column: 1;
+  }
 
-    .right {
-        grid-row: 1;
-        grid-column: 1;
-    }
+  .left {
+    grid-row: 2;
+    grid-column: 1;
+  }
 
-    .left {
-        grid-row: 2;
-        grid-column: 1;
-    }
-
-    .chartWrapper {
-        display: flex;
-        justify-content: center;
-        width: 50%;
-        height: 300px;
-        margin-top: 0;
-        padding-bottom: 0vh;
-    }
+  .chartWrapper {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 300px;
+    margin-top: 0;
+    padding-bottom: 0vh;
+  }
 }
 
 @media only screen and (max-width: 480px) {
+  .wrapper {
+    padding-bottom: 10vh;
+  }
+  .portfolioLoggedIn {
+    width: 90%;
+    height: fit-content;
+    margin: auto;
+    margin-top: 12vh;
+    row-gap: 0;
+    display: grid;
+    grid-template-columns: 100%;
+  }
 
-    .wrapper{
-        padding-bottom: 10vh;
-    }
-    .portfolioLoggedIn {
-        width: 90%;
-        height: fit-content;
-        margin: auto;
-        margin-top: 12vh;
-        row-gap: 0;
-        display: grid;
-        grid-template-columns: 100%;
-    }
+  .addForm {
+    margin-top: 1vh;
+  }
 
-    .addForm {
-        margin-top: 1vh;
-    }
+  .addForm button {
+    font-size: 0.7rem;
+  }
 
-    .coinRow {
-        font-size: 1rem;
-        grid-template-columns: 25% 30% 30% 15%;
-    }
+  .addForm select {
+    font-size: 0.7rem;
+  }
 
-    .labels{
-        grid-template-columns: 25% 30% 30% 15%;
-    }
+  .coinRow {
+    font-size: 1rem;
+    grid-template-columns: 25% 30% 30% 15%;
+  }
 
-    .emptyPortfolio{
-        position: fixed;
-        top: 6%;
-        margin-bottom: 0;
-        font-size: 1rem;
-        text-align: center;
-    }
+  .labels {
+    grid-template-columns: 25% 30% 30% 15%;
+  }
 
-    .right {
-        grid-row: 1;
-        grid-column: 1;
-    }
+  .emptyPortfolio {
+    position: fixed;
+    top: 6%;
+    margin-bottom: 0;
+    font-size: 1rem;
+    text-align: center;
+  }
 
-    .left {
-        grid-row: 2;
-        grid-column: 1;
-    }
+  .right {
+    grid-row: 1;
+    grid-column: 1;
+  }
 
-    .right h1 {
-        margin-top: 0vh;
-        margin-bottom: 1.5vh;
-        font-size: 1.7rem;
-    }
+  .left {
+    grid-row: 2;
+    grid-column: 1;
+  }
 
-    .chartWrapper {
-        display: flex;
-        justify-content: center;
-        width: 50%;
-        height: 250px;
-        margin-top: 0;
-        margin-bottom: 2vh;
-        padding-bottom: 0vh;
-    }
+  .right h1 {
+    margin-top: 0vh;
+    margin-bottom: 1.5vh;
+    font-size: 1.7rem;
+  }
+
+  .chartWrapper {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 250px;
+    margin-top: 0;
+    margin-bottom: 2vh;
+    padding-bottom: 0vh;
+  }
 }

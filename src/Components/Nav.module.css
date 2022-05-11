@@ -5,7 +5,6 @@
   grid-template-columns: 20% 15% 15% 15% 15%;
   justify-content: space-between;
   height: fit-content;
-  max-height: min-content;
   padding: 7px 0;
   background-color: cornflowerblue;
   align-items: center;
@@ -33,6 +32,12 @@
   border-right: 2px solid white;
   text-align: center;
   font-weight: 600;
+}
+
+@media only screen and (max-width: 844px) {
+  .navbar {
+    height: min-content;
+  }
 }
 
 @media only screen and (max-width: 480px) {
