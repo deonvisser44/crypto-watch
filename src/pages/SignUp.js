@@ -33,24 +33,25 @@ function SignUp() {
 
   return (
     <div className={classes.wrapper}>
-    <div className={classes.signupPage}>
-      {error && alert(error)}
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input type="text" id="email" ref={emailRef} />
-        <label htmlFor="password">Password</label>
-        <input type="text" id="password" ref={passwordRef} />
-        <label htmlFor="confirmPassword">Confirm Password</label>
-        <input type="text" id="confirmPassword" ref={passwordConfirmRef} />
-        <button>Sign Up</button>
-      </form>
+      <div className={classes.signupPage}>
+        <div className={classes.errorBox}>{error && <p className={classes.errorText}>{error}</p>}</div>
 
-      <div>
-        <p>
-          Already have an acount?<Link to="/login">Log In</Link>
-        </p>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label>
+          <input type="text" id="email" ref={emailRef} />
+          <label htmlFor="password">Password</label>
+          <input type="text" id="password" ref={passwordRef} />
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input type="text" id="confirmPassword" ref={passwordConfirmRef} />
+          <button>Sign Up</button>
+        </form>
+
+        <div>
+          <p>
+            Already have an acount?<Link to="/login">Log In</Link>
+          </p>
+        </div>
       </div>
-    </div>
     </div>
   );
 }

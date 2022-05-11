@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import TradeViewChart from "react-crypto-chart";
 import classes from "./ChartModal.module.css";
 import { ChartContext } from "../store/Chart-Context";

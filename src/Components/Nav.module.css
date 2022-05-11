@@ -5,6 +5,7 @@
   grid-template-columns: 20% 15% 15% 15% 15%;
   justify-content: space-between;
   height: fit-content;
+  max-height: min-content;
   padding: 7px 0;
   background-color: cornflowerblue;
   align-items: center;

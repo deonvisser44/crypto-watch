@@ -8,12 +8,24 @@
 
 .signupPage{
     margin: auto;
-    margin-top: 25vh;
+    margin-top: 22vh;
     width: 20%;
     height: auto;
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+.errorBox {
+    padding: 0;
+    height: 80px;
+}
+
+.errorText {
+    justify-self: center;
+    margin: auto;
+    color: red;
+    font-size: 1rem;
 }
 
 .signupPage p {

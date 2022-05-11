@@ -13,26 +13,13 @@ import {
 
 export const MarketContext = createContext({});
 
-const newCoinOptions = [
-  "btc",
-  "eth",
-  "usdt",
-  "bnb",
-  "usdc",
-  "xrp",
-  "sol",
-  "luna",
-  "ada",
-  "ust",
-];
 
 export function MarketDataProvider({ children }) {
   const [coinData, setCoinData] = useState([]);
   const [isEditActive, setIsEditActive] = useState(false);
-  // const [tokenValue, setTokenValue] = useState("BTC");
   const [amount, setAmount] = useState("");
-  const [selected, setSelected] = useState(null);
-  const [coinOptions, setCoinOptions] = useState(null);
+  const [selected, setSelected] = useState(undefined);
+  const [coinOptions, setCoinOptions] = useState([]);
   const [portfolio, setPortfolio] = useState(null);
   const [totalValue, setTotalValue] = useState(0);
   const [valueArray, setValueArray] = useState([]);
@@ -47,7 +34,6 @@ export function MarketDataProvider({ children }) {
       )
       .then((res) => {
         setCoinData(res.data);
-        console.log(res.data);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -95,7 +81,7 @@ export function MarketDataProvider({ children }) {
     return deleteCoin;
   }
 
-  async function getPortfolio() {
+  const getPortfolio = () => {
     if (userUID) {
       const q = query(collection(db, userUID));
       const unsub = onSnapshot(q, (querySnapshot) => {
@@ -104,11 +90,9 @@ export function MarketDataProvider({ children }) {
         querySnapshot.forEach((doc) => {
           coinArray.push({ ...doc.data(), id: doc.id });
           tempLabelArray.push(doc.data().token.toUpperCase());
-          console.log(tempLabelArray);
         });
         setPortfolio(coinArray);
         setLabelArray(tempLabelArray);
-        console.log("This is coinArry:", coinArray);
         getTotalValue(coinArray);
       });
       return () => unsub();
@@ -126,12 +110,10 @@ export function MarketDataProvider({ children }) {
       });
       return newItem;
     });
-    console.log(result);
     const totalArray = [];
-    const assetValue = await result.map((unit) => {
-      totalArray.push(unit.amount * unit.current_price);
+    result.map((unit) => {
+      return totalArray.push(unit.amount * unit.current_price);
     });
-    console.log(totalArray);
     setValueArray(totalArray);
     const totalSum = totalArray.reduce(
       (previousValue, currentValue) => previousValue + currentValue,
@@ -189,8 +171,6 @@ export function MarketDataProvider({ children }) {
     setDropdownOptions()
   }, []);
 
-
-
   const values = {
     coinData,
     isEditActive,
@@ -203,7 +183,6 @@ export function MarketDataProvider({ children }) {
     chartOptions,
     portfolio,
     coinOptions,
-    newCoinOptions,
     getPortfolio,
     onChangeAmount,
     onChangeCoin,

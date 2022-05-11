@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import classes from "./Nav.module.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../store/auth-context";
@@ -8,11 +8,6 @@ import { FiLogIn, FiLogOut } from 'react-icons/fi';
 
 function Nav() {
   const { logout, currentUser } = useContext(AuthContext);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const openMobileMenu = () => {
-    setIsMenuOpen(true);
-  };
 
   return (
     <>

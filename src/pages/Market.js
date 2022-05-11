@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
+import React, { useState, useContext } from "react";
 import Coin from "../Components/Coin";
 import Scroll from "../Components/Scroll";
 import classes from "./Market.module.css";
 import { MarketContext } from "../store/MarketData-Context";
-import TradeViewChart from "react-crypto-chart";
 import { ChartContext } from "../store/Chart-Context";
 import ChartModal from "../Components/ChartModal";
 

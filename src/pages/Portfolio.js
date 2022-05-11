@@ -1,56 +1,27 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, {  useContext, useEffect } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Doughnut } from "react-chartjs-2";
 import { Link } from "react-router-dom";
 import classes from "./Portfolio.module.css";
 import { AuthContext } from "../store/auth-context";
-import { db } from "../firebase";
 import { AiOutlineDelete } from "react-icons/ai";
-import TradeViewChart from "react-crypto-chart";
-import {
-  addDoc,
-  query,
-  doc,
-  getDocs,
-  deleteDoc,
-  collection,
-  orderBy,
-  onSnapshot,
-  QuerySnapshot,
-} from "firebase/firestore";
 import { MarketContext } from "../store/MarketData-Context";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const newCoinOptions = [
-  "btc",
-  "eth",
-  "usdt",
-  "bnb",
-  "usdc",
-  "xrp",
-  "sol",
-  "luna",
-  "ada",
-  "ust",
-];
 
 function Portfolio() {
-  const { currentUser, userUID, isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn } = useContext(AuthContext);
   const {
     coinData,
     isEditActive,
     amount,
     selected,
     totalValue,
-    valueArray,
-    labelArray,
     chartData,
     chartOptions,
     portfolio,
     coinOptions,
-    newCoinOptions,
     onChangeAmount,
     onChangeCoin,
     addCoinHandler,
@@ -131,7 +102,7 @@ function Portfolio() {
                   </div>
                   {portfolio &&
                     portfolio.map((coin) => (
-                      <div className={classes.coinRow}>
+                      <div key={coin.token} className={classes.coinRow}>
                         <p>{coin.token.toUpperCase()}</p>
                         <p>{coin.amount}</p>
                         <p>
