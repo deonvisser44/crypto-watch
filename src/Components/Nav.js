@@ -12,7 +12,7 @@ function Nav() {
   return (
     <>
       <div className={classes.navbar}>
-        <p className={classes["nav-1"]}>CoinWatch</p>
+        <p className={classes["nav-1"]}>CryptoWatch</p>
         <Link
           style={{ textDecoration: "none", backgroundColor: "cornflowerblue" }}
           to="/crypto-watch"

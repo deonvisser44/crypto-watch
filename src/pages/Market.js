@@ -26,7 +26,7 @@ function Market() {
       {showChartModal && <ChartModal />}
       <div className={classes["coin-app"]}>
         <div className={classes["coin-search"]}>
-          <h1 className={classes["coin-text"]}>CoinWatch</h1>
+          <h1 className={classes["coin-text"]}>CryptoWatch</h1>
           <form>
             <input
               className={classes["coin-input"]}
