@@ -10,14 +10,15 @@ function News() {
 
   async function getNewsArticles() {
     setIsLoading(true);
-    const response = await fetch("https://data.messari.io/api/v1/news");
+    const response = await fetch("https://newsdata.io/api/1/news?apikey=pub_75141d7e5a73a9bc4d6915e6b1556d20b889&q=cryptocurrency&language=en");
     if (!response.ok) {
       const message = `An error occured: ${response.status}`;
+      console.log('Error occured')
       throw new Error(message);
     }
     const data = await response.json();
-    setArticles(data.data);
-    console.log(data.data);
+    setArticles(data.results);
+    console.log('This is data:', data.results);
     setIsLoading(false);
   }
 
@@ -30,13 +31,13 @@ function News() {
       <div className={classes.newsPage}>
         <h1>CryptoWatch News</h1>
         {isLoading && <div className={classes.loadingSpinner}><img src={loading} alt="loading" /></div>}
-        {articles.map((article) => (
+        {articles && articles.map((article) => (
           <NewsItem
-            url={article.url}
+            url={article.link}
             title={article.title}
-            date={article.published_at}
-            source={article.author.name}
-            tags={article.tags}
+            image={article.image_url}
+            date={article.pubDate}
+            tags={article.category}
           />
         ))}
       </div>
