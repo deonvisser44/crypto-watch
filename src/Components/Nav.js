@@ -55,7 +55,7 @@ function Nav() {
         )}
       </div>
       <div className={classes.mobileNavbar}>
-        <p className={classes["nav-1"]}>CoinWatch</p>
+        <p className={classes["nav-1"]}>CryptoWatch</p>
 
         <div className={classes.footerMenu}>
           <Link className={classes.footerMenuItem} to="/crypto-watch">
