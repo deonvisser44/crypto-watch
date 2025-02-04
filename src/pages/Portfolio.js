@@ -1,4 +1,4 @@
-import React, {  useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { Link } from "react-router-dom";
@@ -6,9 +6,9 @@ import classes from "./Portfolio.module.css";
 import { AuthContext } from "../store/auth-context";
 import { AiOutlineDelete } from "react-icons/ai";
 import { MarketContext } from "../store/MarketData-Context";
+import loading from '../assets/loadergif.gif';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-
 
 function Portfolio() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -28,6 +28,7 @@ function Portfolio() {
     deleteCoinHandler,
     editStateHandler,
     getPortfolio,
+    isFetchingProfile,
   } = useContext(MarketContext);
 
   useEffect(() => {
@@ -53,24 +54,31 @@ function Portfolio() {
           isLoggedIn ? classes.portfolioLoggedIn : classes.portfolioLoggedOut
         }
       >
-        {!isLoggedIn && (
+        {!isLoggedIn && !isFetchingProfile && (
           <div className={classes.loginText}>
             <h2>Please log in to view your portfolio.</h2>
             <Link to="/login">Log In</Link>
           </div>
         )}
-        {isLoggedIn && (
+        {isFetchingProfile && (
+          <div className={classes.loadingSpinner}>
+            <img src={loading} alt="loading" />
+          </div>
+        )}
+        {isLoggedIn && !isFetchingProfile && (
           <>
             <div className={classes.left}>
               <form className={classes.addForm} onSubmit={addCoinHandler}>
                 {coinOptions && (
                   <select
                     id="coinOptions"
-                    defaultValue=''
+                    defaultValue=""
                     value={selected}
                     onChange={onChangeCoin}
                   >
-                    <option hidden value="">Currency</option>
+                    <option hidden value="">
+                      Currency
+                    </option>
                     {coinOptions.map((coin) => (
                       <option key={coin} value={coin}>
                         {coin.toUpperCase()}

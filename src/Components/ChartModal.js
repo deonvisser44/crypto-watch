@@ -44,7 +44,7 @@ function ChartModal() {
   return (
     <div className={classes.backdrop} onClick={(e) => closeModal()}>
       <div className={classes.parent} onClick={(e) => e.stopPropagation()}>
-        <h3>{tokenForChart}/USDT - 1 min</h3>
+        <h3 className={classes.tokenPair}>{tokenForChart}/USDT - 1 min</h3>
         <TradeViewChart
           interval="30m"
           containerStyle={{

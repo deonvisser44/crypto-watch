@@ -13,7 +13,6 @@ import {
 
 export const MarketContext = createContext({});
 
-
 export function MarketDataProvider({ children }) {
   const [coinData, setCoinData] = useState([]);
   const [isEditActive, setIsEditActive] = useState(false);
@@ -24,6 +23,7 @@ export function MarketDataProvider({ children }) {
   const [totalValue, setTotalValue] = useState(0);
   const [valueArray, setValueArray] = useState([]);
   const [labelArray, setLabelArray] = useState([]);
+  const [isFetchingProfile, setIsFetchingProfile] = useState(false);
 
   const { userUID } = useContext(AuthContext);
 
@@ -38,17 +38,18 @@ export function MarketDataProvider({ children }) {
       .catch((error) => console.log(error));
   }, []);
 
-  async function setDropdownOptions(){
-    try{
-      const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
-      const fetchedData = await response.json()
-      const filteredData = fetchedData.map(obj => obj.symbol)
-      setCoinOptions(filteredData)
-    } catch(error) {
-      console.error('The error is:', error)
+  async function setDropdownOptions() {
+    try {
+      const response = await fetch(
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+      );
+      const fetchedData = await response.json();
+      const filteredData = fetchedData.map((obj) => obj.symbol);
+      setCoinOptions(filteredData);
+    } catch (error) {
+      console.error("The error is:", error);
     }
   }
-
 
   const onChangeAmount = (e) => {
     setAmount(e.target.value);
@@ -65,11 +66,10 @@ export function MarketDataProvider({ children }) {
   async function addCoinHandler(e) {
     e.preventDefault();
     try {
-      const docRef = await addDoc(collection(db, userUID), {
+      await addDoc(collection(db, userUID), {
         token: selected,
         amount: amount,
       });
-      console.log("Document written with ID:", docRef.id);
     } catch (error) {
       console.error("Error adding doc:", e);
     }
@@ -83,6 +83,7 @@ export function MarketDataProvider({ children }) {
 
   const getPortfolio = () => {
     if (userUID) {
+      setIsFetchingProfile(true);
       const q = query(collection(db, userUID));
       const unsub = onSnapshot(q, (querySnapshot) => {
         let coinArray = [];
@@ -94,10 +95,11 @@ export function MarketDataProvider({ children }) {
         setPortfolio(coinArray);
         setLabelArray(tempLabelArray);
         getTotalValue(coinArray);
+        setIsFetchingProfile(false);
       });
       return () => unsub();
     }
-  }
+  };
 
   async function getTotalValue(array) {
     const result = await array.map((item) => {
@@ -168,12 +170,13 @@ export function MarketDataProvider({ children }) {
 
   useEffect(() => {
     getPortfolio();
-    setDropdownOptions()
+    setDropdownOptions();
   }, []);
 
   const values = {
     coinData,
     isEditActive,
+    isFetchingProfile,
     amount,
     selected,
     totalValue,
@@ -188,7 +191,7 @@ export function MarketDataProvider({ children }) {
     onChangeCoin,
     addCoinHandler,
     deleteCoinHandler,
-    editStateHandler
+    editStateHandler,
   };
   return (
     <MarketContext.Provider value={values}>{children}</MarketContext.Provider>

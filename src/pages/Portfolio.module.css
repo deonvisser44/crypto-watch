@@ -178,6 +178,20 @@ select:focus {
   margin-top: 2vh;
 }
 
+.loadingSpinner {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 25vh;
+  height: 150px;
+  width: 150px;
+}
+
+.loadingSpinner img {
+  height: 100px;
+  width: 100px;
+}
+
 @media only screen and (max-width: 1200px) {
   .portfolioLoggedIn {
     width: 85%;
@@ -203,6 +217,20 @@ select:focus {
 
   .addForm select {
     font-size: 1rem;
+  }
+
+  .loadingSpinner {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 25vh;
+    height: 100px;
+    width: 100px;
+  }
+
+  .loadingSpinner img {
+    height: 80px;
+    width: 80px;
   }
 }
 
@@ -308,5 +336,19 @@ select:focus {
     margin-top: 0;
     margin-bottom: 2vh;
     padding-bottom: 0vh;
+  }
+
+  .loadingSpinner {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 25vh;
+    height: 80px;
+    width: 80px;
+  }
+
+  .loadingSpinner img {
+    height: 60px;
+    width: 60px;
   }
 }

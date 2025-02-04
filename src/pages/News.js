@@ -13,12 +13,10 @@ function News() {
     const response = await fetch("https://newsdata.io/api/1/news?apikey=pub_75141d7e5a73a9bc4d6915e6b1556d20b889&q=cryptocurrency&language=en");
     if (!response.ok) {
       const message = `An error occured: ${response.status}`;
-      console.log('Error occured')
       throw new Error(message);
     }
     const data = await response.json();
     setArticles(data.results);
-    console.log('This is data:', data.results);
     setIsLoading(false);
   }
 
